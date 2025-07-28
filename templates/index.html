@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Housing Market Dashboard - ABC Company</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/style.css">
+    <script defer src="static/js/script.js"></script>
+    <style>
+        .hero-section {
+            background-image: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+        }
+        .section-image {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">ABC Housing Insights</a>
+  </div>
+</nav>
+
+<header class="hero-section d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">Visualizing Housing Market Trends</h1>
+    <p class="lead animate__animated animate__fadeInUp">An Analysis of Sale Prices and Features using Tableau</p>
+    <a href="#dashboard" class="btn btn-warning btn-lg mt-3 animate__animated animate__fadeInUp">Explore Dashboard</a>
+  </div>
+</header>
+
+<section class="container mt-5 pt-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold mb-3 animate__animated animate__fadeIn">Our Housing Data Journey</h2>
+    <p class="text-muted animate__animated animate__fadeIn">We explore factors like location, age, renovations, and structure types that affect housing prices</p>
+    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be" alt="Modern Housing" class="section-image animate__animated animate__zoomIn">
+  </div>
+</section>
+
+<section id="dashboard" class="container mt-5 pt-5">
+  <div class="text-center mb-4">
+    <h2 class="fw-bold mb-3 animate__animated animate__fadeIn">Interactive Tableau Dashboard</h2>
+    <p class="text-muted animate__animated animate__fadeIn">Gain insights into house age, renovation status, and structural attributes influencing prices</p>
+  </div>
+
+  <!-- Tableau Embed -->
+  <div class='tableauPlaceholder mb-4' id='vizContainer'>
+    <noscript>
+      <a href='#'>
+        <img alt='Transformed Housing Data Analysis Dashboard' src='https://public.tableau.com/static/images/Pr/ProjectDashboard_17537019644420/Dashboard1/1_rss.png' style='border: none' />
+      </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+      <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+      <param name='embed_code_version' value='3' />
+      <param name='name' value='ProjectDashboard_17537019644420/Dashboard1' />
+      <param name='tabs' value='no' />
+      <param name='toolbar' value='yes' />
+      <param name='static_image' value='https://public.tableau.com/static/images/Pr/ProjectDashboard_17537019644420/Dashboard1/1.png' />
+      <param name='animate_transition' value='yes' />
+      <param name='display_static_image' value='yes' />
+      <param name='display_spinner' value='yes' />
+      <param name='display_overlay' value='yes' />
+      <param name='display_count' value='yes' />
+      <param name='language' value='en-US' />
+      <param name='filter' value='publish=yes' />
+    </object>
+  </div>
+
+  <!-- Button to view full dashboard -->
+  <div class="text-center animate__animated animate__fadeInUp">
+    <a class="btn btn-outline-primary btn-lg" target="_blank" rel="noopener noreferrer"
+       href="https://public.tableau.com/views/ProjectDashboard_17537019644420/Dashboard1">
+      View Full Dashboard in Tableau
+    </a>
+  </div>
+</section>
+
+<section class="container mt-5 mb-5 text-center">
+  <h2 class="fw-bold mb-3 animate__animated animate__fadeInUp">Explore Neighborhood Comparisons</h2>
+  <p class="text-muted animate__animated animate__fadeInUp">Each region has a story — understand market behavior visually.</p>
+  <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914" alt="Neighborhood Map" class="section-image animate__animated animate__zoomIn">
+</section>
+
+<footer class="bg-dark text-white text-center py-3 mt-5">
+    <small>&copy; 2025 ABC Company | Powered by Tableau & Flask</small>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script type='text/javascript'>
+    const vizDiv = document.getElementById('vizContainer');
+    const vizObj = vizDiv.getElementsByTagName('object')[0];
+    if (vizDiv.offsetWidth > 800) {
+        vizObj.style.width = '100%';
+        vizObj.style.height = (vizDiv.offsetWidth * 0.6) + 'px';
+    } else {
+        vizObj.style.width = '100%';
+        vizObj.style.height = '1000px';
+    }
+    const scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizObj.parentNode.insertBefore(scriptElement, vizObj);
+</script>
+
+</body>
+</html>
